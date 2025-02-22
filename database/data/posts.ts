@@ -1,4 +1,4 @@
-export const posts = [
+const posts = [
   {
     title: "#001 JavaScript Variables",
     content: `
@@ -79,3 +79,5 @@ let is used to declare a block-scoped variable, which means it is only accessibl
     num: 1,
   },
 ];
+
+export default posts;

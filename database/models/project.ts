@@ -26,4 +26,5 @@ const schema = new Schema<Project>({
   stage: { type: String, required: true },
 });
 
-export const projectModel = mongoose.model<Project>("Project", schema);
+const projectModel = mongoose.model<Project>("Project", schema);
+export default projectModel;

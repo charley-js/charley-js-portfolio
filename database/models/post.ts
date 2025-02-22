@@ -23,4 +23,5 @@ const schema = new Schema<Post>({
   num: { type: Number, required: false },
 });
 
-export const postModel = mongoose.model<Post>("Post", schema);
+const postModel = mongoose.model<Post>("Post", schema);
+export default postModel;

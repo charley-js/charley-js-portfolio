@@ -1,4 +1,4 @@
-export const projects = [
+const projects = [
   {
     title: "Schedulo - Events Platform",
     description:
@@ -64,3 +64,5 @@ export const projects = [
     stage: "planning",
   },
 ];
+
+export default projects;
