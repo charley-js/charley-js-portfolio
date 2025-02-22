@@ -71,8 +71,8 @@ let and const are the most common ways of declaring a variable, they both act th
 let is used to declare a block-scoped variable, which means it is only accessible in the block it is declared, and let can have its value reassigned. const is the opposite, its also block scoped but its value cannot be re-assigned, its more appropriately used when hard-coding data.
     `,
     author: "Charley Crowson",
-    createdAt: new Date("2024-08-10"),
-    updatedAt: new Date("2025-02-18"),
+    created_at: new Date("2024-08-10"),
+    updated_at: new Date("2025-02-18"),
     image: "",
     tags: ["JavaScript", "Fundamentals"],
     collection: "JavaScript Basics",
