@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-interface Post {
+export interface Post {
   title: string;
   content: string;
   author: string;
