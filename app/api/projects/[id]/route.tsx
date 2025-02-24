@@ -42,3 +42,24 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
     return NextResponse.json({ success: false, message: (error as Error).message }, { status: 500 });
   }
 }
+
+export async function DELETE(request: NextRequest, { params }: { params: { id: string } }): Promise<NextResponse> {
+  const id = (await params).id;
+
+  try {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return NextResponse.json({ success: false, message: "Invalid project ID" }, { status: 400 });
+    }
+    await connect();
+    const project = await projectModel.findByIdAndDelete(id);
+    if (!project) {
+      return NextResponse.json({ success: false, message: "Project not found" }, { status: 404 });
+    }
+    return NextResponse.json(
+      { success: true, message: ` Project "${project.title}" succesfully deleted.` },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json({ success: false, message: (error as Error).message }, { status: 500 });
+  }
+}
