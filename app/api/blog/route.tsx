@@ -1,5 +1,5 @@
 import { connect } from "../../../database/connection";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import postModel from "../../../database/models/post";
 
 export async function GET(): Promise<NextResponse> {
@@ -15,5 +15,22 @@ export async function GET(): Promise<NextResponse> {
       { success: false, message: `Error fetching posts : ${(error as Error).message}` },
       { status: 500 }
     );
+  }
+}
+
+export async function POST(request: NextRequest): Promise<NextResponse> {
+  try {
+    await connect();
+
+    const body = await request.json();
+    body.created_at = Date.now();
+    const post = new postModel(body);
+
+    await post.validate();
+    await post.save();
+
+    return NextResponse.json({ success: true, data: post }, { status: 201 });
+  } catch (error) {
+    return NextResponse.json({ success: false, message: (error as Error).message }, { status: 400 });
   }
 }

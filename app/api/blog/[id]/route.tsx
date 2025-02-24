@@ -1,9 +1,9 @@
 import { connect } from "../../../../database/connection";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import postModel from "../../../../database/models/post";
 import mongoose from "mongoose";
 
-export async function GET(request: Request, { params }: { params: { id: string } }): Promise<NextResponse> {
+export async function GET(request: NextRequest, { params }: { params: { id: string } }): Promise<NextResponse> {
   const id = (await params).id;
 
   try {
