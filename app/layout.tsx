@@ -1,4 +1,5 @@
 import { Provider } from "../components/ui/provider";
+import NavBar from "../components/molecules/navBar";
 
 export default function RootLayout({
   children,
@@ -8,7 +9,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Provider>{children}</Provider>
+        <Provider>
+          <NavBar />
+          {children}
+        </Provider>
       </body>
     </html>
   );
