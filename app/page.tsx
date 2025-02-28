@@ -1,4 +1,5 @@
 import Hero from "../components/hero";
+import Services from "../components/services";
 import { Container, Heading } from "@chakra-ui/react";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
         Home
       </Heading>
       <Hero />
+      <Services />
     </Container>
   );
 }
