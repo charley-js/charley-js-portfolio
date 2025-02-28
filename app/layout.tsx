@@ -1,5 +1,5 @@
 import { Provider } from "../components/ui/provider";
-import NavBar from "../components/molecules/navBar";
+import NavBar from "../components/navBar";
 
 export default function RootLayout({
   children,
