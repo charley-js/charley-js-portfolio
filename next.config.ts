@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["@chakra-ui/react"],
   },
   images: {
-    domains: ["media.istockphoto.com"],
+    domains: ["media.istockphoto.com", "www.playfusion.org"],
   },
 };
 

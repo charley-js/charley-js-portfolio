@@ -1,5 +1,6 @@
 import Hero from "../components/hero";
 import Services from "../components/services";
+import CurrentProject from "../components/currentProject";
 import { Container, Heading } from "@chakra-ui/react";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       </Heading>
       <Hero />
       <Services />
+      <CurrentProject />
     </Container>
   );
 }
