@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-interface Project {
+export interface Project {
   title: string;
   description: string;
   tech?: string[];
